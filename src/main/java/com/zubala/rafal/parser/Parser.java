@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -58,7 +60,7 @@ public class Parser {
 
     private void writeCsv() {
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(CSV_FILENAME));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(CSV_FILENAME, StandardCharsets.UTF_8));
             writer.append(CSV_HEADER);
             writer.newLine();
 
